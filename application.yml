@@ -14,7 +14,7 @@
 logging:
   level:
     ROOT: DEBUG
-    cl.sodimac.dad: DEBUG
+    mobdev.example: DEBUG
   logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
     enabled: false
     host: localhost
