@@ -125,3 +125,7 @@ externalservices:
 
 serviceqr:
   aeskey: ${KEY_QR_ENCRYPTION}
+  
+info:
+  project:
+    version: 0.0.1
