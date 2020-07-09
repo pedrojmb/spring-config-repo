@@ -49,7 +49,7 @@ server:
 microservice:
   hulkapiadditem:
     feign:
-      uri: ${HULK_ADD_URLCLTS}
+      uri: https://dog.ceo/api
   hulkapipickorders:
     feign:
-      uri: ${HULK_PCIK_URLCLTS}
+      uri: https://dog.ceo/api
