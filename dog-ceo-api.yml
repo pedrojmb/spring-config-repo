@@ -43,84 +43,13 @@ spring:
       connection-timeout: 60000
       maximum-pool-size: 1
 
-email:
-  quiebreEmailNotify:
-    to: ${EMAIL_QUIEBRE}
-    subject: Informe de SKU con quiebre
-    emailTemplate: emailMarcaQuiebreTemplate
-  quiebreCambioFechaEmailNotify:
-    to: ${EMAIL_QUIEBRE_CAMBIO_FECHA}
-    subject: Informe de Reservas con cambio de fecha
-    emailTemplate: emailQuiebreCambioFechaTemplate
-  guiaDespachoAppConstructorNotify:
-    to: ${EMAIL_GUIA_DESPACHO_CONSTRUCTOR}
-    subject: Guia de Despacho
-    emailTemplate: emailGuiaDespachoAppConstructorTemplate
 server:
   port: 8080
 
-# Datasources
-multitenancy:
-  dadi:
-    dboffline:
-      datasources:
-        -
-          tenantId: CL
-          type: com.zaxxer.hikari.HikariDataSource
-          url: jdbc:oracle:thin:@${DB_URL_DADCLTS}:${DB_PORT_DADCLTS}/${DB_XE_DADCLTS}
-          username: ${DB_USERNAME_DADCLTS}
-          password: ${DB_PASSWORD_DADCLTS}
-
-    dbonline:
-      datasources:
-        -
-          tenantId: CL
-          type: com.zaxxer.hikari.HikariDataSource
-          url: jdbc:oracle:thin:@${DB_URL_NSRCLTS}:${DB_PORT_NSRCLTS}/${DB_XE_NSRCLTS}
-          username: ${DB_USERNAME_NSRCLTS}
-          password: ${DB_PASSWORD_NSRCLTS}
-
-
-
-client:
-  default-uri: ${URL_IMPRESION_ETIQUETA}
-
 microservice:
-  dadgestionentregaapi:
-    feign:
-      uri: ${URL_SRV_ENTREGA}
-  dadjasperreportapi:
-    feign:
-      uri: ${URL_SRV_PDF}
-  wmosinformecartonapi:
-    feign:
-      uri: ${URL_SRV_WMOS}
-  dadrsvapi:
-    feign:
-      uri: ${URL_SRV_RESERVA}
-  ubiquityapi:
-    feign:
-      uri: ${URL_SRV_UBIQUITY}
-  dadutilapi:
-    feign:
-      uri: ${URL_SRV_UTIL}
   hulkapiadditem:
     feign:
       uri: ${HULK_ADD_URLCLTS}
   hulkapipickorders:
     feign:
       uri: ${HULK_PCIK_URLCLTS}
-
-externalservices:
-  quiebreodbms:
-    soapservice:
-      uri: ${URL_QUIEBRE_ODBMS}
-  rsvprimaodbms:
-    soapservice:
-      uri: ${URL_RSV_PRIMA_ODBMS}
-  rsvcrearodbms:
-    soapservice:
-      uri: ${URL_RSV_CREAR_ODBMS}
-
-serviceqr:
-  aeskey: ${KEY_QR_ENCRYPTION}
